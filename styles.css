@@ -1,0 +1,58 @@
+.page {
+    display: none;
+}
+.page.active {
+    display: block;
+}
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+     width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #4ade80;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link.active::after {
+    width: 100%;
+}
+.upload-area {
+    border: 2px dashed #cbd5e0;
+    transition: all 0.3s ease;
+}
+.upload-area:hover {
+    border-color: #4ade80;
+    background-color: #f0fdf4;
+}
+.fact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.cause-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.impact-img {
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.solution-img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+}

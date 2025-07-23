@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Awareness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-leaf text-green-500 text-2xl"></i>
+                <span class="text-xl font-bold text-gray-800">FoodSave</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="nav-link text-gray-600 hover:text-green-500" data-page="login">Login</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-green-500" data-page="home">Home</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-green-500" data-page="causes">Causes</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-green-500" data-page="impacts">Impacts</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-green-500" data-page="solutions">Solutions</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-green-500" data-page="points">My Points</a>
+            </div>
+            <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-500" data-page="login">Login</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-500" data-page="home">Home</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-500" data-page="causes">Causes</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-500" data-page="impacts">Impacts</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-500" data-page="solutions">Solutions</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-500" data-page="points">My Points</a>
+        </div>
+    </nav>
+
+    <!-- Login Page -->
+    <div class="page active min-h-screen" id="login">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8">
+                <div class="text-center mb-8">
+                    <i class="fas fa-leaf text-green-500 text-5xl mb-4"></i>
+                    <h1 class="text-3xl font-bold text-gray-800">Welcome to FoodSave</h1>
+                    <p class="text-gray-600 mt-2">Join our community to fight food waste</p>
+                </div>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="username" name="username" required
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="password" name="password" required
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <button type="submit"
+                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                            Sign Up / Login
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">By joining, you agree to our <a href="#" class="text-green-600 hover:text-green-500">Terms</a> and <a href="#" class="text-green-600 hover:text-green-500">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Page -->
+    <div class="page min-h-screen" id="home">
+        <div class="bg-green-50 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">The Global Food Waste Problem</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">One-third of all food produced worldwide goes to waste. Together, we can change this.</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Is Food Waste Wrong and Bad?</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="fact-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Moral Issue</h3>
+                    <p class="text-gray-600">While millions suffer from hunger and malnutrition, throwing away edible food is unfair and unethical.</p>
+                </div>
+                <div class="fact-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Environmental Damage</h3>
+                    <p class="text-gray-600">Wasted food ends up in landfills, releasing methane, a powerful greenhouse gas that contributes to climate change.</p>
+                </div>
+                <div class="fact-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Wasted Resources</h3>
+                    <p class="text-gray-600">Producing food requires water, energy, land, labor, and transportation. When food is wasted, all these resources are wasted too.</p>
+                </div>
+                <div class="fact-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Economic Loss</h3>
+                    <p class="text-gray-600">Families, businesses, and governments lose billions of dollars annually from food that is bought but never eaten.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:flex-shrink-0 md:w-1/2">
+                        <img class="h-full w-full object-cover" src="images/home.avif" alt="Food waste">
+                    </div>
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Did You Know?</h2>
+                        <p class="text-gray-600 mb-4">If food waste were a country, it would be the third largest emitter of greenhouse gases after China and the United States.</p>
+                        <p class="text-gray-600 mb-4">The water used to produce the food wasted could meet the domestic water needs of 9 billion people.</p>
+                        <p class="text-gray-600">Reducing food waste is one of the most effective ways to fight climate change and conserve resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Causes Page -->
+    <div class="page min-h-screen" id="causes">
+        <div class="bg-green-50 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Causes of Food Waste</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Understanding why food waste happens is the first step to solving the problem.</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/causes 1.avif" alt="Lack of awareness" class="cause-img">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Common Causes of Food Waste</h2>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-lightbulb text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Lack of Awareness</h3>
+                                    <p class="text-gray-600">Many people don't realize how much food they waste or how valuable it is. People throw away food just because it's "ugly," or past the "best before" date even when it's still safe.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-thermometer-half text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Bad Storage</h3>
+                                    <p class="text-gray-600">Improper refrigeration or storage causes fruits, vegetables, and meat to spoil quickly. People might forget about food at the back of the fridge or leave things uncovered.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-shopping-cart text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Overbuying</h3>
+                                    <p class="text-gray-600">Shoppers often buy more than they need, especially during sales or while shopping when hungry. Bulk buying without planning meals leads to unused, expired food.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/causes 2.webp" alt="Systemic causes" class="cause-img">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Systemic Causes in Supply Chain</h2>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-industry text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Overproduction</h3>
+                                    <p class="text-gray-600">Restaurants make too much food just in case. Farmers overgrow crops expecting some to be rejected by retailers. Stores reject food for cosmetic reasons (e.g. a bent carrot or a spotty apple).</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-truck text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Supply Chain Issues</h3>
+                                    <p class="text-gray-600">Inefficient transportation and distribution systems lead to spoilage before food reaches consumers. Strict retailer standards cause rejection of imperfect but edible produce.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-utensils text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Consumer Behavior</h3>
+                                    <p class="text-gray-600">Large portion sizes in restaurants lead to uneaten food. Confusion over date labels ("best before" vs "use by") causes premature disposal. Lack of meal planning results in unused ingredients.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="mt-12 bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="p-8 md:w-2/3">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">The Scale of the Problem</h2>
+                        <p class="text-gray-600 mb-4">Globally, about 1.3 billion tons of food is wasted annually - that's about one-third of all food produced for human consumption.</p>
+                        <p class="text-gray-600 mb-4">In developed countries, most waste occurs at the retail and consumer levels. In developing countries, it's more likely to happen during production and storage.</p>
+                        <p class="text-gray-600">The average American family throws away about $1,500 worth of food each year - that's like throwing away one out of every four bags of groceries you buy.</p>
+                    </div>
+                    <div class="md:flex-shrink-0 md:w-1/3">
+                        <img class="h-full w-full object-cover" src="images/causes 3.avif" alt="Food waste in trash">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impacts Page -->
+    <div class="page min-h-screen" id="impacts">
+        <div class="bg-green-50 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Impacts of Food Waste</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">The consequences of food waste extend far beyond just uneaten meals.</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/hunger.jpeg" alt="Hunger impact" class="impact-img">
+                    <div class="p-6">
+                        <div class="text-green-500 text-4xl mb-4">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Hunger</h3>
+                        <p class="text-gray-600">One-third of all food produced is wasted, yet hundreds of millions of people go hungry. This imbalance highlights a failure in the distribution of resources.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/economic.avif" alt="Economic loss" class="impact-img">
+                    <div class="p-6">
+                        <div class="text-green-500 text-4xl mb-4">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Economic Loss</h3>
+                        <p class="text-gray-600">Households and businesses lose money on food that is never eaten. Globally, food waste causes hundreds of billions of dollars in losses each year.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/resources.jpeg" alt="Wasted resources" class="impact-img">
+                    <div class="p-6">
+                        <div class="text-green-500 text-4xl mb-4">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Wasted Resources</h3>
+                        <p class="text-gray-600">To grow and deliver food that gets wasted, we use water, land, fuel and energy that could be conserved if we reduced waste.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/environmental.jpeg" alt="Environmental impacts" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Environmental Impacts</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-cloud text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Greenhouse Gas Emissions</h3>
+                                    <p class="text-gray-600">When food decomposes in landfills, it produces methane, a greenhouse gas 25 times more potent than carbon dioxide. Food waste accounts for 8% of global emissions.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-tint text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Water Waste</h3>
+                                    <p class="text-gray-600">Agriculture uses 70% of global freshwater. Wasting food means wasting all the water used to produce it - about 45 trillion gallons annually.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-tree text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Land Use</h3>
+                                    <p class="text-gray-600">An area larger than China is used to grow food that is never eaten. This leads to unnecessary deforestation and habitat loss.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/economic.webp" alt="Social and economic impacts" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Social and Economic Impacts</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-users text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Hunger and Inequality</h3>
+                                    <p class="text-gray-600">The amount of food wasted globally could feed all 815 million hungry people in the world four times over. This highlights global inequalities in food distribution.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-building text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Business Costs</h3>
+                                    <p class="text-gray-600">Restaurants lose about $162 billion annually in food waste costs. Grocery stores lose $15 billion annually in unsold fruits and vegetables alone.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-home text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Household Budgets</h3>
+                                    <p class="text-gray-600">The average family of four in the U.S. throws away about $1,500 worth of food each year - money that could be saved or spent on other necessities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:flex-shrink-0 md:w-1/3">
+                        <img class="h-full w-full object-cover" src="images/big_picture.jpeg" alt="Food waste impact">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">The Bigger Picture</h2>
+                        <p class="text-gray-600 mb-4">Reducing food waste is one of the most effective ways to combat climate change. If food waste were a country, it would be the third largest emitter of greenhouse gases after China and the US.</p>
+                        <p class="text-gray-600 mb-4">The resources used to produce wasted food (land, water, energy, labor, capital) could be redirected to more productive uses if we reduced waste.</p>
+                        <p class="text-gray-600">Solving food waste requires systemic changes across the entire food supply chain - from farm to fork - as well as changes in consumer behavior and policy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions Page -->
+    <div class="page min-h-screen" id="solutions">
+        <div class="bg-green-50 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Solutions to Food Waste</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everyone has a role to play in reducing food waste - from individuals to businesses to governments.</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/solution1.jpeg" alt="Individual actions" class="solution-img">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Individual Actions</h2>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-bullhorn text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Spreading Awareness</h3>
+                                    <p class="text-gray-600">Campaigns and education programs help people understand expiry labels ("Best before" ≠ unsafe to eat), proper portion sizes, and meal planning. Schools, media, and governments can play a role.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-box-open text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Storage Education</h3>
+                                    <p class="text-gray-600">Teaching people how to store food properly (e.g. fridge temp, dry storage, use of containers). Use of the FIFO rule – "First In, First Out" – so older food is used before newer items.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-recycle text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Composting</h3>
+                                    <p class="text-gray-600">Turning food scraps into compost helps nourish soil instead of creating methane in landfills. Good for gardens and farming, and reduces waste in trash bins.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/solution2.jpeg" alt="Systemic solutions" class="solution-img">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Systemic Solutions</h2>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-gavel text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Food Waste Laws</h3>
+                                    <p class="text-gray-600">Some countries have laws that ban supermarkets from throwing away edible food (France), encourage donations to charities, and penalize overproduction and improper disposal.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-paw text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Feeding Animals</h3>
+                                    <p class="text-gray-600">Leftover (but safe) food can be turned into animal feed, reducing need for other feed production. This creates a circular economy for food waste.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-mobile-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Technology Solutions</h3>
+                                    <p class="text-gray-600">Apps that connect restaurants with surplus food to charities, smart fridges that track expiration dates, and AI-powered inventory systems can all help reduce waste.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/buying.avif" alt="Shop smart" class="w-full h-40 object-cover">
+                    <div class="p-6 text-center">
+                        <div class="text-green-500 text-4xl mb-4">
+                            <i class="fas fa-shopping-basket"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Shop Smart</h3>
+                        <p class="text-gray-600">Plan meals, make shopping lists, avoid impulse buys, and understand expiration dates to buy only what you need.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/portions.avif" alt="Proper portions" class="w-full h-40 object-cover">
+                    <div class="p-6 text-center">
+                        <div class="text-green-500 text-4xl mb-4">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Serve Proper Portions</h3>
+                        <p class="text-gray-600">Start with smaller portions and go back for seconds if still hungry. Restaurants can offer half-portion options.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/donate.avif" alt="Donate surplus" class="w-full h-40 object-cover">
+                    <div class="p-6 text-center">
+                        <div class="text-green-500 text-4xl mb-4">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Donate Surplus</h3>
+                        <p class="text-gray-600">Support food banks and shelters by donating excess food before it spoils. Many apps connect donors with local charities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="p-8 md:w-2/3">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Success Stories</h2>
+                        <p class="text-gray-600 mb-4">France became the first country to ban supermarkets from throwing away or destroying unsold food, forcing them to donate it instead. This law has dramatically increased food donations to charities.</p>
+                        <p class="text-gray-600 mb-4">In South Korea, residents must pay for food waste by weight. The country has implemented high-tech food waste bins that weigh scraps and charge accordingly, reducing food waste by 30%.</p>
+                        <p class="text-gray-600">Denmark has reduced its food waste by 25% in just 5 years through consumer education campaigns, better food labeling, and initiatives like "Too Good To Go" that sell surplus restaurant food at discount prices.</p>
+                    </div>
+                    <div class="md:flex-shrink-0 md:w-1/3">
+                        <img class="h-full w-full object-cover" src="images/solution3.jpeg" alt="Food donation">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Points Page -->
+    <div class="page min-h-screen" id="points">
+        <div class="bg-green-50 py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">My Points</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Track your contributions to reducing food waste and earn rewards</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                    <div class="p-8">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 md:mb-0">Your Current Points</h2>
+                            <div class="bg-green-100 text-green-800 px-6 py-3 rounded-full text-xl font-bold">
+                                1,250 Points
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 25%"></div>
+                        </div>
+                        <p class="text-gray-600 text-center">You're 25% of the way to your next reward level!</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">How to Earn Points</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-camera text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Upload Photos of Your Efforts</h3>
+                                    <p class="text-gray-600">Upload images of you preserving food well in refrigerator, feeding animals with food scraps, or composting organic wastes.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-clock text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Wait for Review</h3>
+                                    <p class="text-gray-600">Our team will review your submissions within 48 hours and award points based on your contributions.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-trophy text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Earn Rewards</h3>
+                                    <p class="text-gray-600">Redeem your points for discounts at partner stores, donations to food banks in your name, or exclusive sustainability products.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Upload Your Photos</h2>
+                        <div class="upload-area border-2 border-dashed rounded-lg p-8 text-center cursor-pointer mb-4" id="drop-area">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-600 mb-2">Drag & drop your images here or click to browse</p>
+                            <p class="text-sm text-gray-500">Supports JPG, PNG (Max 5MB each)</p>
+                            <input type="file" id="file-input" multiple accept="image/*" class="hidden">
+                        </div>
+                        <div id="preview-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6"></div>
+                        <button id="submit-btn" class="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">
+                            Submit for Review
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Reward Levels</h2>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="border border-green-200 rounded-lg p-6 text-center">
+                                <div class="bg-green-100 text-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-seedling text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Green Sapling (500 pts)</h3>
+                                <p class="text-gray-600 mb-3">10% off at partner stores</p>
+                                <p class="text-gray-600">Digital badge for your profile</p>
+                            </div>
+                            <div class="border border-green-300 rounded-lg p-6 text-center shadow-md">
+                                <div class="bg-green-200 text-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-tree text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Mighty Oak (2,500 pts)</h3>
+                                <p class="text-gray-600 mb-3">20% off at partner stores</p>
+                                <p class="text-gray-600 mb-3">$10 donation to food bank</p>
+                                <p class="text-gray-600">Reusable shopping bag</p>
+                            </div>
+                            <div class="border border-green-400 rounded-lg p-6 text-center bg-green-50">
+                                <div class="bg-green-300 text-green-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-globe-americas text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Planet Hero (5,000 pts)</h3>
+                                <p class="text-gray-600 mb-3">30% off at partner stores</p>
+                                <p class="text-gray-600 mb-3">$25 donation to food bank</p>
+                                <p class="text-gray-600">Premium compost bin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-leaf text-green-400 mr-2"></i> FoodSave
+                    </h3>
+                    <p class="text-gray-400">Join us in the fight against food waste. Together we can make a difference for people and the planet.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                      <li class="flex items-center">
+                          <i class="fas text-green-500 mr-2"></i>
+                          <span class="text-gray-300">Mohanad Mohamed (Leader):</span>
+                      </li>
+                      <li class="flex items-center">
+                          <i class="fas fa-envelope text-green-400 mr-2"></i>
+                          <span class="text-gray-400">ssnone531@gmail.com</span>
+                      </li>
+                        <li class="flex items-center">
+                          <i class="fas text-green-500 mr-2"></i>
+                          <span class="text-gray-300">Yassin Emad (Front End Developer):</span>
+                      </li>
+                      <li class="flex items-center">
+                          <i class="fas fa-envelope text-green-400 mr-2"></i>
+                          <span class="text-gray-400">yassinelmahdy201@gmail.com</span>
+                      </li>
+                      <li class="flex items-center">
+                          <i class="fas text-green-500 mr-2"></i>
+                          <span class="text-gray-300">Robin John (Graphic Designer):</span>
+                      </li>
+                      <li class="flex items-center">
+                          <i class="fas fa-envelope text-green-400 mr-2"></i>
+                          <span class="text-gray-400">robin.john1709@gmail.com</span>
+                      </li>
+                      <li class="flex items-center">
+                          <i class="fas text-green-500 mr-2"></i>
+                          <span class="text-gray-300">Hamza Darwish (Emotional Supporter):</span>
+                      </li>
+                      <li class="flex items-center">
+                          <i class="fas fa-envelope text-green-400 mr-2"></i>
+                          <span class="text-gray-400">HamzaYassinBro@gmail.com</span>
+                      </li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 FoodSave. All rights reserved. | <a href="#" class="hover:text-green-400">Privacy Policy</a> | <a href="#" class="hover:text-green-400">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
