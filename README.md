@@ -1,6 +1,6 @@
 # FoodSave Website
 ## Describtion
-This is a project that demonstrates a model of an idea that came up to my mind. This idea is to make a website that encourages people to save food and aware them about the problem of food waste and including a causes, impacts, and possible solutions for the problem. Finally, it demonstrates an exciting solution that I thought of which is a point system that encourages people to not waste food to gain more points that they can replace it with copouns in food ordering apps or donate money to food banks using this points.
+This is a project that demonstrates a model of an idea that came to my mind. This idea is to make a website that encourages people to save food and aware them about the problem of food waste and including the causes, impacts, and possible solutions for the problem. Finally, it demonstrates an exciting solution that I thought of, which is a point system that encourages people not to waste food to gain more points that they can replace it with coupons in food ordering apps or donate money to food banks using these points.
 ## Usage
 1. Open the demo link of the project.
 2. Navigate between the different pages.
